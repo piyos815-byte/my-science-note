@@ -1,9 +1,7 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "https://allorigins.win"
-    }
+  "rewrites": [
+    { "source": "/api/proxy", "destination": "https://allorigins.win" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
