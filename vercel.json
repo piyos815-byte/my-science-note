@@ -1,9 +1,4 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/proxy",
-      "destination": "https://allorigins.win"
-    }
-  ]
+  "cleanUrls": true
 }
