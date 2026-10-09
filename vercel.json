@@ -2,12 +2,8 @@
   "version": 2,
   "routes": [
     {
-      "src": "/proxy",
-      "dest": "https://allorigins.win"
-    },
-    {
       "src": "/(.*)",
-      "dest": "https://allorigins.win?url=https://raw.githubusercontent.com/W-OVERFLOW/Ultraviolet-Node/main/public/index.html"
+      "dest": "https://allorigins.win"
     }
   ]
 }
