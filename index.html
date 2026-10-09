@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>マイ検索ツール</title>
+  <style>
+    body { font-family: sans-serif; background: #141414; color: white; text-align: center; padding-top: 100px; margin: 0; }
+    .box { background: #222; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: inline-block; width: 90%; max-width: 500px; }
+    h2 { color: #00bcd4; margin-top: 0; }
+    input[type="text"] { width: 80%; padding: 12px; border: 1px solid #444; background: #333; color: white; border-radius: 6px; font-size: 16px; margin-bottom: 15px; text-align: center; }
+    button { padding: 12px 30px; background: #00bcd4; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; font-weight: bold; width: 85%; }
+    button:hover { background: #0097a7; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🌐 マイWeb検索ツール (完成版)</h2>
+    <p>見たいサイトのURLを入力してください</p>
+    <input type="text" id="url-input" placeholder="https://example.com">
+    <br>
+    <button onclick="openSite()">この画面でそのまま開く</button>
+  </div>
+  <script>
+    function openSite() {
+      var input = document.getElementById('url-input').value.trim();
+      if (!input) return alert('URLを入力してください！');
+      if (input.indexOf('http') !== 0) input = 'https://' + input;
+      // 君のVercelのプロキシ機能を使ってサイトを強制起動！
+      window.location.href = window.location.origin + '/api/proxy?url=' + encodeURIComponent(input);
+    }
+  </script>
+</body>
+</html>
